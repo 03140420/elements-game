@@ -7,14 +7,14 @@ module.exports = function ( client, ClientManager, rooms ) {
 				if ( rooms[ `room${ i }` ].length === 1 ) {
 					client.join( `room${ i }` );
 					console.log( 'client joined: ', `room${ i }` );
-					break;
+					return `room${ i }`
 				} else if ( rooms[ `room${ i }` ].length === 2 && i === counter ) {
 					counter++;
 				}
 			} else {
 				client.join( `room${ i }` );
 				console.log( 'new room created client joined: ', `room${ counter }` );
-				break;
+				return `room${ i }`
 			}
 		}
 		console.log( "all rooms", rooms )

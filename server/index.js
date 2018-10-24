@@ -93,7 +93,12 @@ io.on( 'connection', function ( client ) {
 	console.log( 'client connected...', client.id )
 	clientManager.addClient( client )
 	const drawCard1 = () => drawCard( 4 )
-	client.on( 'join', handleJoin )
+	// client.on( 'join', handleJoin )
+	client.on( 'join', function () {
+		let room = handleJoin();
+		// game.room = room;
+		client.emit( "roomJoin", room );
+	} );
 	client.on( 'initialDraw', function () {
 		console.log( 'room' );
 		// drawCard( 4, game );

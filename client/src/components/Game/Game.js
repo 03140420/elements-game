@@ -62,7 +62,14 @@ class Game extends Component {
 
 	componentDidMount() {
 		socket.emit( "join" );
-		socket.emit("initialDraw")
+		socket.on( "roomJoin", room => {
+			console.log( room )
+			this.setState( {
+				room: room
+			}, function () {
+				socket.emit( "initialDraw" );
+			} )
+		} )
 	}
 	// onFlip = ( e ) => {
 	// 	this.setState( {
