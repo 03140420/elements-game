@@ -4,7 +4,8 @@ import GameCard from "../GameCard/GameCard";
 import { Grid, Card, withStyles } from "@material-ui/core";
 import { Card as styles } from "./AllStyles";
 import openSocket from 'socket.io-client';
-const socket = openSocket( 'http://localhost:5000' )
+const socket = openSocket( 'http://localhost:5000' );
+
 function getCount( cards ) {
 	let count = 0
 	for ( let cardType in cards ) {
@@ -12,6 +13,7 @@ function getCount( cards ) {
 	}
 	return count
 }
+
 class Game extends Component {
 	state = {
 		afterFlip: "",
@@ -61,9 +63,11 @@ class Game extends Component {
 	}
 
 	componentDidMount() {
-		socket.emit( "join" );
-		socket.emit("initialDraw")
+		console.log("Calling Join")
+		socket.emit("join");
+		socket.emit("start");
 	}
+
 	// onFlip = ( e ) => {
 	// 	this.setState( {
 	// 		'playerStack': null,
