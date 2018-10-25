@@ -95,8 +95,12 @@ io.on( 'connection', function ( client ) {
 	const drawCard1 = () => drawCard( 4 )
 
 	client.on( 'join', handleJoin )
-
-	client.on( 'start', function () {
+	client.emit('news', { gameState: 'world' });
+	client.on('my other event', function (data) {
+		console.log(data);
+	});
+    // client.on( 'start', function () {
+		
 		// state = {
 		// 	afterFlip: "",
 		// 	opponentsDeck: 25,
@@ -142,9 +146,23 @@ io.on( 'connection', function ( client ) {
 		// 		card: undefined
 		// 	}
 		// }
-		console.log( ds );
+
+		// client.on('gameState', function (data) {
+		// 	console.log(data);
+		// 	if(data === '1') {
+		// 		io.socket.emit('test results', { hello: 'Good' });
+		// 	} else {
+		// 		io.socket.emit('test results', { hello: 'Bad' });
+		// 	}
+		// });
+		// client.emit("gameState", function(){
+		// 	console.log("game state called")
+		// 	const thing = "hello"
+		// 	return thing
+		// })
+
 		// drawCard( 4, game );
-	});
+	// });
 
 	// client.on( 'disconnect', function () {
 	// 	console.log( 'client disconnect...', client.id );

@@ -67,6 +67,9 @@ class Game extends Component {
 		socket.emit("join");
 		socket.emit("start");
 	}
+	componentDidUpdate(){
+		
+	}
 
 	// onFlip = ( e ) => {
 	// 	this.setState( {
@@ -155,6 +158,10 @@ flipCard = () => {
 		this.playCard(e)
 	}
 	render() {
+		socket.on('news', function (data) {
+			console.log(data);
+			socket.emit('my other event', { my: 'data' });
+		});
 		const { classes } = this.props;
 		return (
 			 <Card className={classes.page}>

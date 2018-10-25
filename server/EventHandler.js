@@ -3,7 +3,7 @@ module.exports = function ( client, ClientManager, rooms ) {
 	handleJoin = () => {
 		console.log("handle join");
 		console.log(rooms)
-
+		client.emit('updateField', rooms)
 		// for ( let i = 0; i <= counter; i++ ) {
 		// 	if ( !!rooms[ `room${ i }` ] ) {
 		// 		if ( rooms[ `room${ i }` ].length === 1 ) {
