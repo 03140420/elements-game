@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+    <title>Discard PopUp Box</title>
+    <!-- <link rel="/index.css" rel="stylesheet" /> -->
+    <style>
+body {
+    /* height: 200px; */
+    background-color: black;
+}
+
+/* <!--The popup box inlcuding background is now visible to other players.--> */
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+/* Prompt to player to select their card */
+#myModal {
+    font-size: 120%;
+    color: pink;
+    background-color: ;
+}
+
+#myBtn {
+    font-size: 200%;
+    background-color: yellow;
+    color: bold black;
+}
+
+choiceToMake {
+    font-size: 100%;
+    color: yellow;
+    text-align: center;
+}
+/* <!-- Popup Box's Inside Contents --> */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: space-between;
+}
+
+.flex-container > div {
+  background-color: lightgreen;
+  width: 20%;
+  margin: 5px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 120%;
+}
+
+/* <!--The Close Button--> */
+.close {
+    color: red;
+    float: right;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: orange;
+    text-decoration: none;
+    cursor: pointer;
+}
+    </style>
+ </head>
+<body>
+      <!-- Trigger:  Open The Modal (ie. open the popup box)-->
+    <button id="myBtn">Player Move</button>
+    <div id="grad1"></div>
+
+      <!-- The Modal (ie. the popup box is now open to the player)-->
+    <div id="myModal" class="modal">
+         <p id="choiceToMake">
+         </br></br></br>
+             "Please select the card that you would like to return to your hand."
+         </p>
+    </div>
+        <!-- Modal content (ie. what function do you want the popup box to provide for you )-->
+    <div class="flex-container">
+        <div>
+            <p>
+                <img src="../earth4.png" alt="earth card"
+                width="70%" height="70" />
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <img src="../fire4.png"
+                alt="fire card"
+                width="90%"
+                 height="120%" />
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <img src="../light5.png" alt="light card"
+                width="70%"
+                height="70%" />
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <img src="../shadow2.png" alt="shadow pic"
+                width="70%"
+                height="70%" />
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <img src="../water5.png" alt="water pic"
+                width="70%"
+                height="70%" />
+            </p>
+        </div>
+    </div>
+    <div>
+        <p>Click on the card of your choice</p>
+    </div>
+
+      <script></script>
+    </body>
+</html>
